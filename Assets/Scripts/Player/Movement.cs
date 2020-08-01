@@ -8,8 +8,8 @@ public class Movement : MonoBehaviour
     private Rigidbody2D _rigidbody;
     [SerializeField]
     private float _speed = 200;
-    //[SerializeField]
-    //private Animator _animator;
+    [SerializeField]
+    private Animator _animator;
     //[SerializeField]
     //private Transform _bulletSpawn;
 
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
     void GetHorizontalMovement()
     {
         var movement = Input.GetAxis("Horizontal");
-        //_animator.SetBool("RunningState", movement != 0);
+        _animator.SetBool("isWalking", movement != 0);
 
         if (movement > 0 && !_isFacingRight || movement < 0 && _isFacingRight)
             Flip();
