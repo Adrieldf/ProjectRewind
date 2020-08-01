@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3212570868313180022}
   - component: {fileID: 3212570868313180023}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Robot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: bc840eb49bb49a74fa7506ed2e56874b, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 1
@@ -72,7 +72,7 @@ MonoBehaviour:
   _jumpVelocity: 5
   _rigidbody: {fileID: 3212570868313180021}
   _speed: 200
-  _animator: {fileID: 0}
+  _animator: {fileID: 3212570870163908181}
 --- !u!61 &3212570868313180017
 BoxCollider2D:
   m_ObjectHideFlags: 0
