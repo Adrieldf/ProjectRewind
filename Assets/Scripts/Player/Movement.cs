@@ -12,9 +12,12 @@ public class Movement : MonoBehaviour
     private Animator _animator;
     [SerializeField]
     private Rewind _rewind;
+    [SerializeField]
+    private Battery _battery = null;
 
     private bool _isOnTheFloor;
     private bool _isFacingRight = true;
+    private bool _hasBatteryLeft = true;
 
     void Update()
     {
@@ -28,7 +31,10 @@ public class Movement : MonoBehaviour
         var isMoving = movement != 0 || _rewind.IsRewinding;
         _animator.SetBool("isWalking", isMoving);
 
-        MoveHorizontally(movement);
+        if (isMoving)
+            _hasBatteryLeft = _battery.ConsumeBattery();
+
+        MoveHorizontally(_hasBatteryLeft ? movement : 0f);
     }
 
     void MoveHorizontally(float movement)
@@ -54,8 +60,11 @@ public class Movement : MonoBehaviour
     {
         var spaceButton = Input.GetButtonDown("Jump");
 
-        if (spaceButton && _isOnTheFloor)
+        if (spaceButton && _isOnTheFloor && _hasBatteryLeft)
+        {
             _rigidbody.velocity = Vector2.up * _jumpVelocity;
+            _hasBatteryLeft = _battery.ConsumeBattery(true);
+        }
     }
 
     private void Flip()

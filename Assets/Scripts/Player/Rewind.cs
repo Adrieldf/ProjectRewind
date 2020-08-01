@@ -8,6 +8,8 @@ public class Rewind : MonoBehaviour
     [SerializeField]
     private Rigidbody2D _rigidbody;
     private LimitedStack<Vector3> _positionStack;
+    [SerializeField]
+    private Battery _battery = null;
     
     public bool IsRewinding { get; private set; } = false;
 
@@ -38,6 +40,8 @@ public class Rewind : MonoBehaviour
         
         if (position != Vector3.zero)
             transform.position = position;
+
+        _battery.RefillBattery();
     }
 
     public void SavePosition(Vector3 position)

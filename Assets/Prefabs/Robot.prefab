@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3212570868313180020}
   - component: {fileID: 3212570868313180021}
-  - component: {fileID: 3212570868313180026}
   - component: {fileID: 3212570868313180017}
   - component: {fileID: 3212570868313180022}
   - component: {fileID: 3212570868313180023}
+  - component: {fileID: 3212570868313180026}
   - component: {fileID: 1076157545866065258}
+  - component: {fileID: 620156555}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -58,23 +59,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &3212570868313180026
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3212570868313180027}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8343fe79e3b963d47b469205a12db202, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _jumpVelocity: 5
-  _rigidbody: {fileID: 3212570868313180021}
-  _speed: 200
-  _animator: {fileID: 3212570870163908181}
-  _rewind: {fileID: 1076157545866065258}
 --- !u!61 &3212570868313180017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -143,6 +127,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81397986, y: 1.0056369}
   m_EdgeRadius: 0
+--- !u!114 &3212570868313180026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212570868313180027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8343fe79e3b963d47b469205a12db202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _jumpVelocity: 5
+  _rigidbody: {fileID: 3212570868313180021}
+  _speed: 200
+  _animator: {fileID: 3212570870163908181}
+  _rewind: {fileID: 1076157545866065258}
+  _battery: {fileID: 620156555}
 --- !u!114 &1076157545866065258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _capacity: 200
   _rigidbody: {fileID: 3212570868313180021}
+  _battery: {fileID: 620156555}
+--- !u!114 &620156555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212570868313180027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abfb110a3a052964ebb6cba524cf793a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _batteryBar: {fileID: 0}
+  _batteryBubble: {fileID: 0}
 --- !u!1 &3212570870163908184
 GameObject:
   m_ObjectHideFlags: 0
