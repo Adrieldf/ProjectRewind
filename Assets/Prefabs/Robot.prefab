@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3212570868313180017}
   - component: {fileID: 3212570868313180022}
   - component: {fileID: 3212570868313180023}
+  - component: {fileID: 1076157545866065258}
   m_Layer: 0
   m_Name: Robot
   m_TagString: Untagged
@@ -73,6 +74,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 3212570868313180021}
   _speed: 200
   _animator: {fileID: 3212570870163908181}
+  _rewind: {fileID: 1076157545866065258}
 --- !u!61 &3212570868313180017
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -112,8 +114,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.01409256, y: 0.051544584}
-  m_Size: {x: 1.1764401, y: 0.2012454}
+  m_Offset: {x: -0.014092575, y: -0.07475621}
+  m_Size: {x: 1.1764407, y: 0.8513553}
   m_Direction: 1
 --- !u!61 &3212570868313180023
 BoxCollider2D:
@@ -141,6 +143,20 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.81397986, y: 1.0056369}
   m_EdgeRadius: 0
+--- !u!114 &1076157545866065258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3212570868313180027}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d274d62d955194449a434d330f1b1b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _capacity: 200
+  _rigidbody: {fileID: 3212570868313180021}
 --- !u!1 &3212570870163908184
 GameObject:
   m_ObjectHideFlags: 0
