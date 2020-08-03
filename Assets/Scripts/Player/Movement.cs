@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
 
         var isMoving = movement != 0 || _rewind.IsRewinding;
-        _animator.SetBool("isWalking", isMoving);
+        _animator.SetBool("isWalking", isMoving && _hasBatteryLeft);
 
         if (isMoving)
             _hasBatteryLeft = _battery.ConsumeBattery();
