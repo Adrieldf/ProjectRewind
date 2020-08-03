@@ -22,19 +22,22 @@ public class Movement : MonoBehaviour
     void Update()
     {
         CheckJump();
+
+        _animator.SetBool("isOutOfBattery", _battery.BatteryLeft <= 0);
     }
 
     void FixedUpdate()
     {
         var movement = Input.GetAxis("Horizontal");
 
-        var isMoving = movement != 0 || _rewind.IsRewinding;
+        var isMoving = movement != 0 && !_rewind.IsRewinding;
+
         _animator.SetBool("isWalking", isMoving && _hasBatteryLeft);
 
         if (isMoving)
             _hasBatteryLeft = _battery.ConsumeBattery();
 
-        MoveHorizontally(_hasBatteryLeft ? movement : 0f);
+        MoveHorizontally(_hasBatteryLeft && !_rewind.IsRewinding ? movement : 0f);
     }
 
     void MoveHorizontally(float movement)

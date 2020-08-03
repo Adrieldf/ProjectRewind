@@ -13,7 +13,7 @@ public class Battery : MonoBehaviour
     //[SerializeField]
     //private LevelManager _levelManager = null;
 
-    private float _batteryLeft = 100f;
+    public float BatteryLeft = 100f;
     private float _maxBattery = 100f; //get from current level
     private float _batteryDecay = 1f;
     private void Start()
@@ -23,25 +23,27 @@ public class Battery : MonoBehaviour
 
     void Update()
     {
-        _batteryBar.fillAmount = _batteryLeft / _maxBattery;
+        _batteryBar.fillAmount = BatteryLeft / _maxBattery;
     }
 
     public bool ConsumeBattery(bool isJumping = false)
     {
-        _batteryLeft -= isJumping ? _batteryDecay * 10 : _batteryDecay;
-        if (_batteryLeft <= 0)
+        BatteryLeft -= isJumping ? _batteryDecay * 10 : _batteryDecay;
+        if (BatteryLeft <= 0)
             return false;
 
-       // _batteryBubble.SetActive(_maxBattery * 100 / _batteryLeft > 20);
+        Debug.Log("Consuming - Battery Left: " + BatteryLeft);
+        // _batteryBubble.SetActive(_maxBattery * 100 / _batteryLeft > 20);
 
         return true;
 
     }
     public void RefillBattery()
     {
-        _batteryLeft += 1f;
-        if (_batteryLeft > _maxBattery)
-            _batteryLeft = _maxBattery;
+        BatteryLeft += 1f;
+        if (BatteryLeft > _maxBattery)
+            BatteryLeft = _maxBattery;
+        Debug.Log("Refilling - Battery Left: " + BatteryLeft);
     }
 
 
