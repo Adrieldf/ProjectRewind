@@ -30,7 +30,10 @@ public class Battery : MonoBehaviour
     {
         BatteryLeft -= isJumping ? _batteryDecay * 10 : _batteryDecay;
         if (BatteryLeft <= 0)
+        {
+            BatteryLeft = 0f;
             return false;
+        }
 
         Debug.Log("Consuming - Battery Left: " + BatteryLeft);
         // _batteryBubble.SetActive(_maxBattery * 100 / _batteryLeft > 20);
