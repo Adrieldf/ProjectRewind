@@ -10,25 +10,31 @@ public class Rewind : MonoBehaviour
     private LimitedStack<PositionState> _positionStack;
     [SerializeField]
     private Battery _battery = null;
-    
+    private int _rewindCount = 3;
+
     public bool IsRewinding { get; private set; } = false;
 
     void Start()
     {
-        CreatePositionStack(_capacity);
+        SetProperties(_capacity, _rewindCount);
     }
 
-    public void CreatePositionStack(int capacity)
+    public void SetProperties(int capacity, int rewindCount)
     {
+        _rewindCount = rewindCount;
         _capacity = capacity;
         _positionStack = new LimitedStack<PositionState>(_capacity);
     }
+
     void Update()
     {
         if (Input.GetButtonDown("Rewind"))
             IsRewinding = true;
         if (Input.GetButtonUp("Rewind"))
+        {
             IsRewinding = false;
+            _rewindCount--;
+        }
     }
 
     void FixedUpdate()
@@ -41,12 +47,16 @@ public class Rewind : MonoBehaviour
 
     private void RewindPosition()
     {
-        var lastState = GetLastState();
-        
-        if (lastState.Position != Vector3.zero)
+
+        if (_rewindCount > 0)
         {
-            transform.position = lastState.Position;
-            _battery.RefillBattery(lastState.BatteryLeft);
+            var lastState = GetLastState();
+
+            if (lastState.Position != Vector3.zero)
+            {
+                transform.position = lastState.Position;
+                _battery.RefillBattery(lastState.BatteryLeft);
+            }
         }
     }
 

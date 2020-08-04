@@ -9,9 +9,6 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _robot = null;
 
-
-
-
     public void SpawnLevel()
     {
         Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity);
@@ -22,16 +19,16 @@ public class LevelManager : MonoBehaviour
         _robot.transform.position = level.GetSpawnPosition();
 
         _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
-        _robot.GetComponent<Rewind>().CreatePositionStack(level.MaxRewindCapacity);
-        
-        //rewind count
+        _robot.GetComponent<Rewind>().SetProperties(level.MaxRewindCapacity, level.RewindCount);
     }
+
     public void ResetLevel()
     {
         DeleteCurrentLevel();
         SpawnLevel();
 
     }
+
     public void DeleteCurrentLevel()
     {
         Destroy(GameObject.FindGameObjectWithTag("Level"));
@@ -43,6 +40,4 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Parabains");
         //Carregar o level
     }
-
-
 }
