@@ -21,7 +21,10 @@ public class LevelManager : MonoBehaviour
 
         _robot.transform.position = level.GetSpawnPosition();
 
-      //  _robot.GetComponent<Battery>().
+        _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
+        _robot.GetComponent<Rewind>().CreatePositionStack(level.MaxRewindCapacity);
+        
+        //rewind count
     }
     public void ResetLevel()
     {

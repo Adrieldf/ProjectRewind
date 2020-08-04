@@ -15,9 +15,14 @@ public class Rewind : MonoBehaviour
 
     void Start()
     {
-        _positionStack = new LimitedStack<PositionState>(_capacity);
+        CreatePositionStack(_capacity);
     }
 
+    public void CreatePositionStack(int capacity)
+    {
+        _capacity = capacity;
+        _positionStack = new LimitedStack<PositionState>(_capacity);
+    }
     void Update()
     {
         if (Input.GetButtonDown("Rewind"))
