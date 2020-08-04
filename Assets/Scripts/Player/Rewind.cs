@@ -7,7 +7,7 @@ public class Rewind : MonoBehaviour
     private int _capacity = 200;
     [SerializeField]
     private Rigidbody2D _rigidbody;
-    private LimitedStack<Vector3> _positionStack;
+    private LimitedStack<PositionState> _positionStack;
     [SerializeField]
     private Battery _battery = null;
     
@@ -15,7 +15,7 @@ public class Rewind : MonoBehaviour
 
     void Start()
     {
-        _positionStack = new LimitedStack<Vector3>(_capacity);
+        _positionStack = new LimitedStack<PositionState>(_capacity);
     }
 
     void Update()
@@ -36,25 +36,26 @@ public class Rewind : MonoBehaviour
 
     private void RewindPosition()
     {
-        var position = GetLastPosition();
+        var lastState = GetLastState();
         
-        if (position != Vector3.zero)
-            transform.position = position;
-
-        _battery.RefillBattery();
+        if (lastState.Position != Vector3.zero)
+        {
+            transform.position = lastState.Position;
+            _battery.RefillBattery(lastState.BatteryLeft);
+        }
     }
 
     public void SavePosition(Vector3 position)
     {
         if (_rigidbody.velocity.x != 0 || _rigidbody.velocity.y != 0)
-            _positionStack.Push(position);
+            _positionStack.Push(new PositionState(position, _battery.BatteryLeft));
     }
 
-    private Vector3 GetLastPosition()
+    private PositionState GetLastState()
     {
         if (_positionStack.HasItems())
             return _positionStack.Pop();
 
-        return Vector3.zero;
+        return PositionState.CreateDefault();
     }
 }

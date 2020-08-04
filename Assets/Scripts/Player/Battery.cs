@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Battery : MonoBehaviour
@@ -26,33 +24,24 @@ public class Battery : MonoBehaviour
         _batteryBar.fillAmount = BatteryLeft / _maxBattery;
     }
 
-    public bool ConsumeBattery(bool isJumping = false)
+    public bool ConsumeBattery()
     {
-        BatteryLeft -= isJumping ? _batteryDecay * 10 : _batteryDecay;
+        BatteryLeft -= _batteryDecay;
+
         if (BatteryLeft <= 0)
         {
             BatteryLeft = 0f;
             return false;
         }
 
-        Debug.Log("Consuming - Battery Left: " + BatteryLeft);
-        // _batteryBubble.SetActive(_maxBattery * 100 / _batteryLeft > 20);
-
         return true;
-
     }
-    public void RefillBattery()
+
+    public void RefillBattery(float batteryLeft)
     {
-        BatteryLeft += 1f;
+        BatteryLeft = batteryLeft;
+
         if (BatteryLeft > _maxBattery)
             BatteryLeft = _maxBattery;
-        Debug.Log("Refilling - Battery Left: " + BatteryLeft);
-    }
-
-
-    public void RecalibrateBatteries()
-    {
-        //_maxBattery = _levelManager.BatteryAmount;
-        //_batteryLeft = _maxBattery;
     }
 }
