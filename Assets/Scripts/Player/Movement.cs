@@ -66,7 +66,7 @@ public class Movement : MonoBehaviour
         if (spaceButton && _isOnTheFloor && _hasBatteryLeft)
         {
             _rigidbody.velocity = Vector2.up * _jumpVelocity;
-            _hasBatteryLeft = _battery.ConsumeBattery(true);
+            _hasBatteryLeft = _battery.ConsumeBattery();
         }
     }
 
