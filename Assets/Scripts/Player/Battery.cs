@@ -44,4 +44,10 @@ public class Battery : MonoBehaviour
         if (BatteryLeft > _maxBattery)
             BatteryLeft = _maxBattery;
     }
+
+    public void SetBattery(float max)
+    {
+
+
+    }
 }

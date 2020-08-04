@@ -21,7 +21,7 @@ public class LevelManager : MonoBehaviour
 
         _robot.transform.position = level.GetSpawnPosition();
 
-        _robot.GetComponent<Battery>().
+      //  _robot.GetComponent<Battery>().
     }
     public void ResetLevel()
     {
