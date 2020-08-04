@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Infrastructure;
+using TMPro;
 using UnityEngine;
 
 public class Rewind : MonoBehaviour
@@ -10,6 +11,9 @@ public class Rewind : MonoBehaviour
     private LimitedStack<PositionState> _positionStack;
     [SerializeField]
     private Battery _battery = null;
+    [SerializeField]
+    private TextMeshProUGUI _textMesh;
+
     private int _rewindCount = 3;
 
     public bool IsRewinding { get; private set; } = false;
@@ -24,6 +28,7 @@ public class Rewind : MonoBehaviour
         _rewindCount = rewindCount;
         _capacity = capacity;
         _positionStack = new LimitedStack<PositionState>(_capacity);
+        UpdateRewindsCounterText();
     }
 
     void Update()
@@ -33,7 +38,7 @@ public class Rewind : MonoBehaviour
         if (Input.GetButtonUp("Rewind"))
         {
             IsRewinding = false;
-            _rewindCount--;
+            UpdateRewindsCounter();
         }
     }
 
@@ -45,9 +50,22 @@ public class Rewind : MonoBehaviour
             SavePosition(transform.position);
     }
 
+    private void UpdateRewindsCounter()
+    {
+        if (_rewindCount > 0)
+        {
+            _rewindCount--;
+            UpdateRewindsCounterText();
+        }
+    }
+
+    private void UpdateRewindsCounterText()
+    {
+        _textMesh.text = $"Rewinds left: {_rewindCount}";
+    }
+
     private void RewindPosition()
     {
-
         if (_rewindCount > 0)
         {
             var lastState = GetLastState();
