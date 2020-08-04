@@ -1,10 +1,14 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class LevelManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> Levels = new List<GameObject>();
     private int _currLevelIndex = 0;
+    [SerializeField]
+    private GameObject _robot = null;
+
 
 
 
@@ -13,7 +17,11 @@ public class LevelManager : MonoBehaviour
         Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity);
         _currLevelIndex++;
 
-        
+        Level level = GameObject.FindGameObjectWithTag("Level").GetComponent<Level>();
+
+        _robot.transform.position = level.GetSpawnPosition();
+
+        _robot.GetComponent<Battery>().
     }
     public void ResetLevel()
     {
