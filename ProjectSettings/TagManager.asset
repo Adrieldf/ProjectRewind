@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - LevelManager
+  - Level
   layers:
   - Default
   - TransparentFX

@@ -3,7 +3,7 @@
 public class Movement : MonoBehaviour
 {
     [SerializeField]
-    private float _jumpVelocity = 5;
+    private float _jumpVelocity = 7.5f;
     [SerializeField]
     private Rigidbody2D _rigidbody;
     [SerializeField]
