@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - LevelManager
   - Level
+  - Crate
+  - Raken
   layers:
   - Default
   - TransparentFX
