@@ -7,13 +7,13 @@ public class PressurePlate : MonoBehaviour
     [SerializeField]
     private Animator _animator;
 
-    private int collidingCount = 0;
+    private int _collidingCount = 0;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CanPressPlate(collision))
         {
-            collidingCount++;
+            _collidingCount++;
             _ironDoor.OpenDoor();
 
             _animator.SetBool("IsPressed", true);
@@ -24,9 +24,9 @@ public class PressurePlate : MonoBehaviour
     {
         if (CanPressPlate(collision))
         {
-            collidingCount--;
+            _collidingCount--;
 
-            if (collidingCount == 0)
+            if (_collidingCount == 0)
             {
                 _ironDoor.CloseDoor();
                 _animator.SetBool("IsPressed", false);
