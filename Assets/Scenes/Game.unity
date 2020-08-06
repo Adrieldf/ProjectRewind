@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -656,7 +656,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 8
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -680,7 +680,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 412531532}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1, y: 0.1000003, z: -10}
+  m_LocalPosition: {x: 1.1, y: 0.10000048, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2006918344}
@@ -926,7 +926,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -5967,6 +5967,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3212570868313180020, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
   m_PrefabInstance: {fileID: 917640395}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &917640397 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3212570868313180027, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
+  m_PrefabInstance: {fileID: 917640395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &948599478
 GameObject:
   m_ObjectHideFlags: 0
@@ -6086,8 +6091,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8372b3e4c918a6f42bb04e6f129c806b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Levels: []
-  _robot: {fileID: 0}
+  Levels:
+  - {fileID: 5993150931719190232, guid: b68ceeb2540880049acc1ca1e5ad22e9, type: 3}
+  _robot: {fileID: 917640397}
 --- !u!1 &1257010685
 GameObject:
   m_ObjectHideFlags: 0
@@ -6643,7 +6649,7 @@ MonoBehaviour:
   m_Follow: {fileID: 917640396}
   m_Lens:
     FieldOfView: 60
-    OrthographicSize: 5
+    OrthographicSize: 8
     NearClipPlane: 0.3
     FarClipPlane: 1000
     Dutch: 0

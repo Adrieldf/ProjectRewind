@@ -45,6 +45,9 @@ public class Battery : MonoBehaviour
             BatteryLeft = _maxBattery;
     }
 
-    public void SetMaxBattery(float max) => _maxBattery = max;
-
+    public void SetMaxBattery(float max)
+    {
+        _maxBattery = max;
+        BatteryLeft = _maxBattery;
+    }
 }

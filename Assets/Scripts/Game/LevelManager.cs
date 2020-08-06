@@ -9,6 +9,12 @@ public class LevelManager : MonoBehaviour
     [SerializeField]
     private GameObject _robot = null;
 
+
+    private void Start()
+    {
+        SpawnLevel();
+    }
+
     public void SpawnLevel()
     {
         Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity);

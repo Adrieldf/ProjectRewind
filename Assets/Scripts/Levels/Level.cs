@@ -6,11 +6,11 @@ public class Level : MonoBehaviour
     private Transform _playerSpawn;
 
     [SerializeField]
-    public int MaxBattery { get; private set; }
+    public int MaxBattery = 0;
     [SerializeField]
-    public int MaxRewindCapacity { get; private set; }
+    public int MaxRewindCapacity = 0;
     [SerializeField]
-    public int RewindCount { get; private set; }
+    public int RewindCount = 0;
 
     public Vector3 GetSpawnPosition()
         => _playerSpawn.position;
