@@ -9,7 +9,6 @@ public class PressurePlate : MonoBehaviour
 
     private int collidingCount = 0;
 
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (CanPressPlate(collision))
