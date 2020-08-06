@@ -50,14 +50,16 @@ public class Movement : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        _isOnTheFloor = !_isOnTheFloor && other.CompareTag("Ground") ? true : _isOnTheFloor;
+        _isOnTheFloor = !_isOnTheFloor && isOnGround(other) ? true : _isOnTheFloor;
     }
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Ground"))
+        if (isOnGround(other))
             _isOnTheFloor = false;
     }
+
+    private bool isOnGround(Collider2D other) => other.CompareTag("Ground") || other.CompareTag("Crate");
 
     private void CheckJump()
     {
