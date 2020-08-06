@@ -7,13 +7,13 @@ public class Battery : MonoBehaviour
     private Image _batteryBar = null;
     [SerializeField]
     private GameObject _batteryBubble = null;
-
+    private float _maxBattery = 100f;
+    private float _batteryDecay = 1f;
     //[SerializeField]
     //private LevelManager _levelManager = null;
 
-    public float BatteryLeft = 100f;
-    private float _maxBattery = 100f; //get from current level
-    private float _batteryDecay = 1f;
+    public float BatteryLeft { get; private set; } = 100f;
+    
     private void Start()
     {
         _batteryBar.fillAmount = 1f;

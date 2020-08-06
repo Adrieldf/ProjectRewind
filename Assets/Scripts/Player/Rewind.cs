@@ -1,4 +1,5 @@
 ﻿using Assets.Scripts.Infrastructure;
+using TMPro;
 using UnityEngine;
 
 public class Rewind : MonoBehaviour
@@ -10,25 +11,35 @@ public class Rewind : MonoBehaviour
     private LimitedStack<PositionState> _positionStack;
     [SerializeField]
     private Battery _battery = null;
-    
+    [SerializeField]
+    private TextMeshProUGUI _textMesh;
+
+    private int _rewindCount = 3;
+
     public bool IsRewinding { get; private set; } = false;
 
     void Start()
     {
-        CreatePositionStack(_capacity);
+        SetProperties(_capacity, _rewindCount);
     }
 
-    public void CreatePositionStack(int capacity)
+    public void SetProperties(int capacity, int rewindCount)
     {
+        _rewindCount = rewindCount;
         _capacity = capacity;
         _positionStack = new LimitedStack<PositionState>(_capacity);
+        UpdateRewindsCounterText();
     }
+
     void Update()
     {
         if (Input.GetButtonDown("Rewind"))
             IsRewinding = true;
         if (Input.GetButtonUp("Rewind"))
+        {
             IsRewinding = false;
+            UpdateRewindsCounter();
+        }
     }
 
     void FixedUpdate()
@@ -39,14 +50,31 @@ public class Rewind : MonoBehaviour
             SavePosition(transform.position);
     }
 
+    private void UpdateRewindsCounter()
+    {
+        if (_rewindCount > 0)
+        {
+            _rewindCount--;
+            UpdateRewindsCounterText();
+        }
+    }
+
+    private void UpdateRewindsCounterText()
+    {
+        _textMesh.text = $"Rewinds left: {_rewindCount}";
+    }
+
     private void RewindPosition()
     {
-        var lastState = GetLastState();
-        
-        if (lastState.Position != Vector3.zero)
+        if (_rewindCount > 0)
         {
-            transform.position = lastState.Position;
-            _battery.RefillBattery(lastState.BatteryLeft);
+            var lastState = GetLastState();
+
+            if (lastState.Position != Vector3.zero)
+            {
+                transform.position = lastState.Position;
+                _battery.RefillBattery(lastState.BatteryLeft);
+            }
         }
     }
 

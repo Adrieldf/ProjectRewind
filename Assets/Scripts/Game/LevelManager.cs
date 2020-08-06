@@ -25,16 +25,16 @@ public class LevelManager : MonoBehaviour
         _robot.transform.position = level.GetSpawnPosition();
 
         _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
-        _robot.GetComponent<Rewind>().CreatePositionStack(level.MaxRewindCapacity);
-        //_robot.GetComponent<Rewind>().
-        //rewind count
+        _robot.GetComponent<Rewind>().SetProperties(level.MaxRewindCapacity, level.RewindCount);
     }
+
     public void ResetLevel()
     {
         DeleteCurrentLevel();
         SpawnLevel();
 
     }
+
     public void DeleteCurrentLevel()
     {
         Destroy(GameObject.FindGameObjectWithTag("Level"));
@@ -46,6 +46,4 @@ public class LevelManager : MonoBehaviour
         Debug.Log("Parabains");
         //Carregar o level
     }
-
-
 }
