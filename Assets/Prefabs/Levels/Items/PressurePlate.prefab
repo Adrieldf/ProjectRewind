@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1402904041989592258}
   - component: {fileID: 1402904041989592285}
   - component: {fileID: 1402904041989592284}
+  - component: {fileID: 1292206449}
   m_Layer: 0
   m_Name: IronDoor
   m_TagString: Untagged
@@ -129,6 +130,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1292206449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402904041989592286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3426ed90b1443d44a986473a03ad4605, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 1402904041989592284}
+  _collider: {fileID: 1402904041989592285}
 --- !u!1 &1402904043432535300
 GameObject:
   m_ObjectHideFlags: 0
@@ -141,9 +156,10 @@ GameObject:
   - component: {fileID: 1402904043432535307}
   - component: {fileID: 1402904043432535306}
   - component: {fileID: 1402904043432535301}
+  - component: {fileID: 863711419}
   m_Layer: 0
   m_Name: PressurePlate
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -259,3 +275,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &863711419
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402904043432535300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25ea055c93937694183204288aee19f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _ironDoor: {fileID: 1292206449}
+  _animator: {fileID: 1402904043432535301}
