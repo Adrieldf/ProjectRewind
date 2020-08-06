@@ -10,7 +10,10 @@ public class LevelManager : MonoBehaviour
     private GameObject _robot = null;
 
 
-
+    private void Start()
+    {
+        SpawnLevel();
+    }
 
     public void SpawnLevel()
     {
@@ -23,7 +26,7 @@ public class LevelManager : MonoBehaviour
 
         _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
         _robot.GetComponent<Rewind>().CreatePositionStack(level.MaxRewindCapacity);
-        
+        //_robot.GetComponent<Rewind>().
         //rewind count
     }
     public void ResetLevel()
