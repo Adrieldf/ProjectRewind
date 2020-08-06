@@ -5,7 +5,7 @@ public class LevelManager : MonoBehaviour
 {
     [SerializeField]
     private List<GameObject> Levels = new List<GameObject>();
-    private int _currLevelIndex = 0;
+    private int _currLevelIndex = 1;
     [SerializeField]
     private GameObject _robot = null;
 
