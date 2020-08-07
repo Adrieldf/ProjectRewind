@@ -21,15 +21,19 @@ public class Raken : MonoBehaviour
             Talk();
     }
 
+    public void ClearMessages()
+    {
+        CancelInvoke();
+        _messageQueue.Clear();
+        DeactivateChatCloud();
+    }
+
     private void Talk()
     {
         _isTalking = true;
 
         if (_messageQueue.Count == 0)
-        {
-            _chatCloud.SetActive(false);
-            _isTalking = false;
-        }
+            DeactivateChatCloud();
         else
         {
             var message = _messageQueue.Dequeue();
@@ -38,5 +42,12 @@ public class Raken : MonoBehaviour
             _chatCloud.SetActive(true);
             Invoke("Talk", message.TimeToLive);
         }
+    }
+
+    private void DeactivateChatCloud()
+    {
+        _isTalking = false;
+        _chatCloudText.text = string.Empty;
+        _chatCloud.SetActive(false);
     }
 }

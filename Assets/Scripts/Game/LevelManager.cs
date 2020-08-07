@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
     private List<GameObject> Levels = new List<GameObject>();
     [SerializeField]
     private GameObject _robot = null;
+    [SerializeField]
+    private Raken _raken = null;
     private int _currLevelIndex = 0;
 
     private void Start()
@@ -33,6 +35,7 @@ public class LevelManager : MonoBehaviour
 
     public void ResetLevel()
     {
+        _raken.ClearMessages();
         DeleteCurrentLevel(true);
         SpawnLevel();
     }
@@ -49,6 +52,12 @@ public class LevelManager : MonoBehaviour
     {
         DeleteCurrentLevel(false);
         SpawnLevel();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Reset Level"))
+            ResetLevel();
     }
 
     private void GoToCreditsScreen()

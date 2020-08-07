@@ -6142,6 +6142,7 @@ MonoBehaviour:
   - {fileID: 5993150931719190232, guid: 7a236d910a57d1f408bf12b041b5c11e, type: 3}
   - {fileID: 5993150931719190232, guid: 57696816440463e44a33562a40abbbd4, type: 3}
   _robot: {fileID: 917640397}
+  _raken: {fileID: 6047250}
 --- !u!1 &1257010685
 GameObject:
   m_ObjectHideFlags: 0
