@@ -6000,6 +6000,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+    - target: {fileID: 3212570870163908186, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
+      propertyPath: m_SortingOrder
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
 --- !u!4 &917640396 stripped
@@ -6136,6 +6140,7 @@ MonoBehaviour:
   - {fileID: 5993150931719190232, guid: ec469b35a960d2b4fa853bf4cf7b6c07, type: 3}
   - {fileID: 5993150931719190232, guid: af34724a934ed484687605bef1c0917f, type: 3}
   - {fileID: 5993150931719190232, guid: 7a236d910a57d1f408bf12b041b5c11e, type: 3}
+  - {fileID: 5993150931719190232, guid: 57696816440463e44a33562a40abbbd4, type: 3}
   _robot: {fileID: 917640397}
 --- !u!1 &1257010685
 GameObject:
