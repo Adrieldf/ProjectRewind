@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1292206449}
   m_Layer: 0
   m_Name: IronDoor
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ BoxCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.00008425396, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
+    border: {x: 0.02, y: 0.01, z: 0.02, w: 0.02}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.08, y: 0.16}
     newSize: {x: 0.08, y: 0.16}
