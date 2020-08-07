@@ -38,6 +38,9 @@ Transform:
   - {fileID: 8187305438073556665}
   - {fileID: 8637612206739931346}
   - {fileID: 6809101797583941137}
+  - {fileID: 4684934684902507950}
+  - {fileID: 7707404344329291302}
+  - {fileID: 5129245290328738226}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -153,6 +156,80 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6319588476976300391, guid: b9890c827d1965240ad5f35a3e23714c, type: 3}
   m_PrefabInstance: {fileID: 706355125499064182}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1453443589187950396
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4248905775385749394}
+    m_Modifications:
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.8005
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.165973
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820126, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_Name
+      value: Tip spot (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _tip
+      value: Iron doors can be opened by pressing pressure plates
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _timeToLive
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+--- !u!4 &7707404344329291302 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+  m_PrefabInstance: {fileID: 1453443589187950396}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2277472466401190765
 PrefabInstance:
@@ -687,6 +764,154 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8384738424608376348, guid: 318f84f07f0c04047908b5ff23e30e4e, type: 3}
   m_PrefabInstance: {fileID: 4054033594520255404}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4175722229355698344
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4248905775385749394}
+    m_Modifications:
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.8005
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.165973
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820126, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_Name
+      value: Tip spot (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _tip
+      value: The door will stay opened as long as the plate is pressed
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _timeToLive
+      value: 5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+--- !u!4 &5129245290328738226 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+  m_PrefabInstance: {fileID: 4175722229355698344}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4600887792830272692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 4248905775385749394}
+    m_Modifications:
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.854
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 163.8005
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.165973
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820126, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: m_Name
+      value: Tip spot
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _tip
+      value: Well done! You have completed level one
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141630305286820127, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+      propertyPath: _timeToLive
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+--- !u!4 &4684934684902507950 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9141630305286820122, guid: 883e90984f4ca3b4ab303c842cdc6acc, type: 3}
+  m_PrefabInstance: {fileID: 4600887792830272692}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5446383568081887612
 PrefabInstance:

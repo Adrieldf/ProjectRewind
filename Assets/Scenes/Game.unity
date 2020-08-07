@@ -6143,6 +6143,7 @@ MonoBehaviour:
   - {fileID: 5993150931719190232, guid: 57696816440463e44a33562a40abbbd4, type: 3}
   - {fileID: 5993150931719190232, guid: f45725999f1a794478f05e3a472b9c9c, type: 3}
   _robot: {fileID: 917640397}
+  _raken: {fileID: 6047250}
 --- !u!1 &1257010685
 GameObject:
   m_ObjectHideFlags: 0
