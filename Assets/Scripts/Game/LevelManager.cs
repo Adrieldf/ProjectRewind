@@ -16,10 +16,8 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnLevel()
     {
-        Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity);
+        Level level = Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity).GetComponent<Level>();
         _currLevelIndex++;
-
-        Level level = GameObject.FindGameObjectWithTag("Level").GetComponent<Level>();
 
         _robot.transform.position = level.GetSpawnPosition();
 
@@ -29,19 +27,21 @@ public class LevelManager : MonoBehaviour
 
     public void ResetLevel()
     {
-        DeleteCurrentLevel();
+        DeleteCurrentLevel(true);
         SpawnLevel();
     }
 
-    public void DeleteCurrentLevel()
+    public void DeleteCurrentLevel(bool decreaseLevelIndex)
     {
         Destroy(GameObject.FindGameObjectWithTag("Level"));
-        _currLevelIndex--;
+        
+        if (decreaseLevelIndex)
+            _currLevelIndex--;
     }
 
     public void LevelCompleted()
     {
-        Debug.Log("Parabains");
-        //Carregar o level
+        DeleteCurrentLevel(false);
+        SpawnLevel();
     }
 }
