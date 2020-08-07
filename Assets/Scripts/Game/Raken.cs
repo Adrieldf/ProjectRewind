@@ -8,6 +8,8 @@ public class Raken : MonoBehaviour
     [SerializeField]
     private GameObject _chatCloud;
     [SerializeField]
+    private Animator _animator;
+    [SerializeField]
     private TextMeshProUGUI _chatCloudText;
 
     private Queue<Message> _messageQueue = new Queue<Message>();
@@ -36,8 +38,8 @@ public class Raken : MonoBehaviour
             DeactivateChatCloud();
         else
         {
+            _animator.SetBool("IsTalking", true);
             var message = _messageQueue.Dequeue();
-
             _chatCloudText.text = message.Content;
             _chatCloud.SetActive(true);
             Invoke("Talk", message.TimeToLive);
@@ -47,6 +49,7 @@ public class Raken : MonoBehaviour
     private void DeactivateChatCloud()
     {
         _isTalking = false;
+        _animator.SetBool("IsTalking", false);
         _chatCloudText.text = string.Empty;
         _chatCloud.SetActive(false);
     }
