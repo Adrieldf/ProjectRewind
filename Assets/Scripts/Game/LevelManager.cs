@@ -19,6 +19,8 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnLevel()
     {
+        _raken.ClearMessages();
+
         if (Levels.Count == _currLevelIndex)
             GoToCreditsScreen();
         else
