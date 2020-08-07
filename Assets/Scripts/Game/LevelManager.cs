@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
@@ -16,13 +17,18 @@ public class LevelManager : MonoBehaviour
 
     public void SpawnLevel()
     {
-        Level level = Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity).GetComponent<Level>();
-        _currLevelIndex++;
+        if (Levels.Count == _currLevelIndex)
+            GoToCreditsScreen();
+        else
+        {
+            Level level = Instantiate(Levels[_currLevelIndex], Vector3.zero, Quaternion.identity).GetComponent<Level>();
+            _currLevelIndex++;
 
-        _robot.transform.position = level.GetSpawnPosition();
+            _robot.transform.position = level.GetSpawnPosition();
 
-        _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
-        _robot.GetComponent<Rewind>().SetProperties(level.MaxRewindCapacity, level.RewindCount);
+            _robot.GetComponent<Battery>().SetMaxBattery(level.MaxBattery);
+            _robot.GetComponent<Rewind>().SetProperties(level.MaxRewindCapacity, level.RewindCount);
+        }
     }
 
     public void ResetLevel()
@@ -44,4 +50,7 @@ public class LevelManager : MonoBehaviour
         DeleteCurrentLevel(false);
         SpawnLevel();
     }
+
+    private void GoToCreditsScreen()
+        => SceneManager.LoadScene("Credits");
 }
