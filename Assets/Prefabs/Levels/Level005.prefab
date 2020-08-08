@@ -71,7 +71,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerSpawn: {fileID: 4449312085304554214}
-  MaxBattery: 575
+  MaxBattery: 450
   MaxRewindCapacity: 800
   RewindCount: 3
 --- !u!1 &6467889319350935524
@@ -1370,7 +1370,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8384738424608376348, guid: 318f84f07f0c04047908b5ff23e30e4e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.76
+      value: 8.748
       objectReference: {fileID: 0}
     - target: {fileID: 8384738424608376348, guid: 318f84f07f0c04047908b5ff23e30e4e, type: 3}
       propertyPath: m_LocalPosition.y
