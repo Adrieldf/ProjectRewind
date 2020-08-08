@@ -17,6 +17,8 @@ public class Rewind : MonoBehaviour
     private AudioSource _audioSource = null;
     [SerializeField]
     private AudioClip _rewindSFX = null;
+    [SerializeField]
+    private GameObject _rewindPanel = null;
 
     private int _rewindCount = 3;
 
@@ -40,15 +42,13 @@ public class Rewind : MonoBehaviour
         if (Input.GetButtonDown("Rewind"))
         {
             IsRewinding = true;
-            _audioSource.clip = _rewindSFX;
-            _audioSource.loop = true;
-            _audioSource.Play();
         }
         if (Input.GetButtonUp("Rewind"))
         {
             IsRewinding = false;
             _audioSource.loop = false;
             _audioSource.Stop();
+            _rewindPanel.SetActive(false);
             UpdateRewindsCounter();
         }
     }
@@ -79,6 +79,11 @@ public class Rewind : MonoBehaviour
     {
         if (_rewindCount > 0)
         {
+            _audioSource.clip = _rewindSFX;
+            _audioSource.loop = true;
+            _audioSource.Play();
+            _rewindPanel.SetActive(true);
+
             var lastState = GetLastState();
 
             if (lastState.Position != Vector3.zero)

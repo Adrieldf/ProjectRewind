@@ -147,7 +147,9 @@ MonoBehaviour:
   _rewind: {fileID: 1076157545866065258}
   _battery: {fileID: 620156555}
   _audioSource: {fileID: 917640398}
-  _windowsErrorSFX: {fileID: 8300000, guid: aad649e4ab8cac942a12cdd71970712a, type: 3}
+  _noBatterySFX: {fileID: 8300000, guid: aad649e4ab8cac942a12cdd71970712a, type: 3}
+  _walkingSFX: {fileID: 8300000, guid: a62ec7348fa812a428544b143be85c89, type: 3}
+  _jumpingSFX: {fileID: 8300000, guid: 2ca3f0db03fe91c4f921f20f1c2a5246, type: 3}
 --- !u!114 &1076157545866065258
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +166,9 @@ MonoBehaviour:
   _rigidbody: {fileID: 3212570868313180021}
   _battery: {fileID: 620156555}
   _textMesh: {fileID: 0}
+  _audioSource: {fileID: 917640398}
+  _rewindSFX: {fileID: 8300000, guid: adcd0db9e4014ae448662e1f01895675, type: 3}
+  _rewindPanel: {fileID: 0}
 --- !u!114 &620156555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -190,7 +195,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.8
+  m_Volume: 1
   m_Pitch: 1
   Loop: 0
   Mute: 0

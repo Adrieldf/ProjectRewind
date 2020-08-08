@@ -17,7 +17,11 @@ public class Movement : MonoBehaviour
     [SerializeField]
     private AudioSource _audioSource = null;
     [SerializeField]
-    private AudioClip _windowsErrorSFX = null;
+    private AudioClip _noBatterySFX = null;
+    [SerializeField]
+    private AudioClip _walkingSFX = null;
+    [SerializeField]
+    private AudioClip _jumpingSFX = null;
 
     private bool _isOnTheFloor;
     private bool _isFacingRight = true;
@@ -40,24 +44,29 @@ public class Movement : MonoBehaviour
         _animator.SetBool("isWalking", isMoving && _hasBatteryLeft);
 
         if (isMoving)
+        {
             _hasBatteryLeft = _battery.ConsumeBattery();
 
-        MoveHorizontally(_hasBatteryLeft && !_rewind.IsRewinding ? movement : 0f);
-
-        if (!_hasBatteryLeft)
-        {
-            if (!_playedWindowsErrorSFX)
-            {
-                _audioSource.clip = _windowsErrorSFX;
-                _audioSource.Play();
-                _playedWindowsErrorSFX = true;
-            }
+            if (_hasBatteryLeft)
+                PlayWalkingSFX();
+            else if (IsPlayingWalkinSFX())
+                StopSFX();
         }
         else
         {
-            _playedWindowsErrorSFX = false;
+            if (!_rewind.IsRewinding && IsPlayingWalkinSFX() && !IsPlayingNoBatterySFX())
+                StopSFX();
         }
+
+        if (!_hasBatteryLeft)
+            PlayNoBatterySFX();
+        else
+            _playedWindowsErrorSFX = false;
+
+        MoveHorizontally(_hasBatteryLeft && !_rewind.IsRewinding ? movement : 0f);
     }
+
+
 
     void MoveHorizontally(float movement)
     {
@@ -86,6 +95,7 @@ public class Movement : MonoBehaviour
 
         if (spaceButton && _isOnTheFloor && _hasBatteryLeft)
         {
+            PlayJumpingSFX();
             _rigidbody.velocity = Vector2.up * _jumpVelocity;
             _hasBatteryLeft = _battery.ConsumeBattery();
         }
@@ -96,4 +106,45 @@ public class Movement : MonoBehaviour
         _isFacingRight = !_isFacingRight;
         transform.Rotate(0, 180, 0);
     }
+    #region SFX
+
+    bool IsPlayingWalkinSFX() => _audioSource.clip == _walkingSFX && _audioSource.isPlaying;
+    bool IsPlayingJumpingSFX() => _audioSource.clip == _jumpingSFX && _audioSource.isPlaying;
+    bool IsPlayingNoBatterySFX() => _audioSource.clip == _noBatterySFX && _audioSource.isPlaying;
+    void PlayWalkingSFX()
+    {
+        if (IsPlayingJumpingSFX() || IsPlayingNoBatterySFX())
+            return;
+
+        if (_audioSource.clip != _walkingSFX || !_audioSource.isPlaying)
+        {
+            _audioSource.clip = _walkingSFX;
+            _audioSource.loop = true;
+            _audioSource.Play();
+        }
+    }
+    void PlayNoBatterySFX()
+    {
+        if (_playedWindowsErrorSFX)
+            return;
+
+        _audioSource.clip = _noBatterySFX;
+        _audioSource.loop = false;
+        _audioSource.Play();
+        _playedWindowsErrorSFX = true;
+
+    }
+    void PlayJumpingSFX()
+    {
+        _audioSource.clip = _jumpingSFX;
+        _audioSource.loop = false;
+        _audioSource.Play();
+    }
+    void StopSFX()
+    {
+        _audioSource.clip = null;
+        _audioSource.loop = false;
+        _audioSource.Stop();
+    }
+    #endregion
 }
