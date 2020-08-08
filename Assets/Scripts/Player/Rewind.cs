@@ -79,10 +79,13 @@ public class Rewind : MonoBehaviour
     {
         if (_rewindCount > 0)
         {
-            _audioSource.clip = _rewindSFX;
-            _audioSource.loop = true;
-            _audioSource.Play();
-            _rewindPanel.SetActive(true);
+            if (_audioSource.clip != _rewindSFX || !_audioSource.isPlaying)
+            {
+                _audioSource.clip = _rewindSFX;
+                _audioSource.loop = true;
+                _audioSource.Play();
+                _rewindPanel.SetActive(true);
+            }
 
             var lastState = GetLastState();
 
