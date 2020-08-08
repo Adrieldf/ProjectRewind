@@ -9,6 +9,7 @@ TagManager:
   - Level
   - Crate
   - Raken
+  - Music
   layers:
   - Default
   - TransparentFX

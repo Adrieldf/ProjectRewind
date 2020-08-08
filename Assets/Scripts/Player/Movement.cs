@@ -14,10 +14,15 @@ public class Movement : MonoBehaviour
     private Rewind _rewind;
     [SerializeField]
     private Battery _battery = null;
+    [SerializeField]
+    private AudioSource _audioSource = null;
+    [SerializeField]
+    private AudioClip _windowsErrorSFX = null;
 
     private bool _isOnTheFloor;
     private bool _isFacingRight = true;
     private bool _hasBatteryLeft = true;
+    private bool _playedWindowsErrorSFX = false;
 
     void Update()
     {
@@ -38,6 +43,20 @@ public class Movement : MonoBehaviour
             _hasBatteryLeft = _battery.ConsumeBattery();
 
         MoveHorizontally(_hasBatteryLeft && !_rewind.IsRewinding ? movement : 0f);
+
+        if (!_hasBatteryLeft)
+        {
+            if (!_playedWindowsErrorSFX)
+            {
+                _audioSource.clip = _windowsErrorSFX;
+                _audioSource.Play();
+                _playedWindowsErrorSFX = true;
+            }
+        }
+        else
+        {
+            _playedWindowsErrorSFX = false;
+        }
     }
 
     void MoveHorizontally(float movement)

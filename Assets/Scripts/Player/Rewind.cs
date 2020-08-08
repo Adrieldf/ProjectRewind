@@ -13,6 +13,10 @@ public class Rewind : MonoBehaviour
     private Battery _battery = null;
     [SerializeField]
     private TextMeshProUGUI _textMesh;
+    [SerializeField]
+    private AudioSource _audioSource = null;
+    [SerializeField]
+    private AudioClip _rewindSFX = null;
 
     private int _rewindCount = 3;
 
@@ -34,10 +38,17 @@ public class Rewind : MonoBehaviour
     void Update()
     {
         if (Input.GetButtonDown("Rewind"))
+        {
             IsRewinding = true;
+            _audioSource.clip = _rewindSFX;
+            _audioSource.loop = true;
+            _audioSource.Play();
+        }
         if (Input.GetButtonUp("Rewind"))
         {
             IsRewinding = false;
+            _audioSource.loop = false;
+            _audioSource.Stop();
             UpdateRewindsCounter();
         }
     }

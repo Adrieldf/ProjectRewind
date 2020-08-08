@@ -5961,6 +5961,14 @@ PrefabInstance:
       propertyPath: _textMesh
       value: 
       objectReference: {fileID: 1293817119}
+    - target: {fileID: 1076157545866065258, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
+      propertyPath: _audioSource
+      value: 
+      objectReference: {fileID: 917640398}
+    - target: {fileID: 1076157545866065258, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
+      propertyPath: _rewindSFX
+      value: 
+      objectReference: {fileID: 8300000, guid: adcd0db9e4014ae448662e1f01895675, type: 3}
     - target: {fileID: 3212570868313180020, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.1
@@ -6005,25 +6013,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3212570868313180026, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
-      propertyPath: _jumpVelocity
-      value: 7.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212570868313180026, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
-      propertyPath: _speed
-      value: 200
-      objectReference: {fileID: 0}
     - target: {fileID: 3212570868313180027, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
       propertyPath: m_Name
       value: Robot
-      objectReference: {fileID: 0}
-    - target: {fileID: 3212570870163908186, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-    - target: {fileID: 3212570870163908186, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
-      propertyPath: m_SortingOrder
-      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
@@ -6035,6 +6027,11 @@ Transform:
 --- !u!1 &917640397 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3212570868313180027, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
+  m_PrefabInstance: {fileID: 917640395}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &917640398 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 917640398, guid: a6e7455fb3c60334daf46d8d83047b2f, type: 3}
   m_PrefabInstance: {fileID: 917640395}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &948599478
